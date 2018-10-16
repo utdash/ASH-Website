@@ -2,69 +2,66 @@
 <html lang="en">
 
 <head>
-	<title>Contact</title>
+    {% if page.title %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
-	<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/old/fancybox.css?1234" />
+	<link id="wsite-base-style" rel="stylesheet" type="text/css" href="https://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
+	<link rel="stylesheet" type="text/css" href="https://cdn2.editmysite.com/css/old/fancybox.css?1234" />
 	<link rel="stylesheet" type="text/css" href="files/main_style.css?1539102259" title="wsite-theme-css" />
-	<link href='http://fonts.googleapis.com/css?family=Play:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Play:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 
 	<style type='text/css'>
 		.wsite-header {
-			background-image: url(uploads/1/0/8/4/10841474/header_images/1422576020.jpg) !important;
+			background-image: url(uploads/header_images/1422576020.jpg) !important;
 			background-position: 0 0 !important;
 		}
 	</style>
 </head>
 
-<body class=" tall-header-page wsite-theme-dark  wsite-page-contact">
+<body class="tall-header-page wsite-theme-dark  wsite-page-contact">
 	<div id="nav-wrap">
 		<div id="page">
 			<div id="topnav">
 				<ul class="wsite-menu-default">
-					<li id="pg630128377690782098" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/index.html" or page.url == "/" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="index.html" class="wsite-menu-item">
 							Home
 						</a>
-
 					</li>
-					<li id="pg556864277177963792" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/events.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="events.html" class="wsite-menu-item">
 							Meetings & Events
 						</a>
-
 					</li>
-					<li id="pg288667748810936401" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/past-events.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="past-events.html" class="wsite-menu-item">
 							Past Events
 						</a>
-
 					</li>
-					<li id="pg181312439582571719" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/about-us.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="about-us.html" class="wsite-menu-item">
 							About Us
 						</a>
-
 					</li>
-					<li id="active" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/contact.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="contact.html" class="wsite-menu-item">
 							Contact
 						</a>
-
 					</li>
-					<li id="pg100042852710769492" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/officer-application.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="officer-application.html" class="wsite-menu-item">
 							Officer Application
 						</a>
-
 					</li>
-					<li id="pg263425732847507164" class="wsite-menu-item-wrap">
+					<li {% if page.url == "/community-involvement.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
 						<a href="community-involvement.html" class="wsite-menu-item">
 							Community Involvement
 						</a>
-
 					</li>
 				</ul>
 				<div style="clear:both"></div>
@@ -104,40 +101,17 @@
 			</div>
 		</div>
 	</div>
-	<div id="main-wrap">
+	<div id="main-wrap" style="display: block; overflow: hidden;">
 		<div id="page">
 			<div id="main">
 				<div id="content">
-					<div id="wsite-content" class="wsite-elements wsite-not-footer">
-						<h2 class="wsite-content-title" style="text-align:center;">
-							Question or Comments?
-						</h2>
-
-						<p style="text-align: center">
-							For general questions or comments, please email us at <a href="mailto:officers@utdash.com">officers@utdash.com</a>.
-						</p>
-
-						<br>
-						<br>
-
-						<h3 style="text-align: center">
-							Officer Contact List
-						</h3>
-
-						<div class="paragraph" style="text-align:center"><br />
-							<p>President: <a href="mailto:joshua@utdash.com">Joshua Baker</a></p>
-							<p>Vice President: <a href="mailto:asia@utdash.com">Asia Jackson</a></p>
-							<p>Media Coordinator: <a href="mailto:mitch@utdash.com">Mitch Grace</a></p>
-							<p>Website Manager: <a href="mailto:jacob@utdash.com">Jacob Camacho</a></p>
-							<p>Faculty Advisor: <a href="https://profiles.utdallas.edu/carlos.aiken">Carlos Aiken</a></p>
-						</div>
-					</div>
+                    {{ content }}
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="paragraph" style="text-align:center;">
+	<div class="paragraph" style="float: none;text-align:center;">
 		The ASH Website is published by Atheists, Skeptics, and Humanists at UT Dallas, a registered student
 		organization. The ASH Website is not an official publication of UT Dallas and does not represent the views of the
 		university or its officers. The University of Texas at Dallas is an Equal Opportunity/Affirmative Action University.
