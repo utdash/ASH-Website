@@ -26,7 +26,7 @@ layout: default
 ---
 ```
 
-This is referred to as "front matter". The `layout` property refers to a file in the `/_layouts` folder.
+This is referred to as "front matter". The `layout` property refers to a file in the `_layouts` folder.
 Each layout file contains `{{ content }}` somewhere. When Jekyll processes a page, it inserts all of that page's content
 into the location of `{{ content }}` in the specified layout file.
 
