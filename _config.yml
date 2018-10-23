@@ -1,4 +1,10 @@
 name: UTD ASH Website
 title: UTD ASH
-source: _sources
 repository: utdash/ASH-Website
+
+exclude:
+  - '.*' # Don't include hidden files
+  - Gemfile
+  - Gemfile.lock
+  - serveLocal.sh
+  - README.md

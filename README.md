@@ -17,6 +17,25 @@ For instance:
 
 Normal HTML files will not be changed, and they will appear on the site as expected.
 
+## Jekyll options (in \_config.yml)
+Some Jekyll options get overwritten by GitHub Pages when publishing the site. Therefore, it is dangerous to define these settings locally because doing so will cause Jekyll to compile differently locally than it compiles on the server.
+
+Avoid defining these Jekyll settings (ESPECIALLY SOURCE!)
+```yml
+ lsi: false
+ safe: true
+ source: [your repo's top level directory]
+ incremental: false
+ highlighter: rouge
+ gist:
+   noscript: false
+ kramdown:
+   math_engine: mathjax
+   syntax_highlighter: rouge
+```
+
+For more information, visit <https://help.github.com/articles/configuring-jekyll/>.
+
 ## Front matter
 Each page file can start with a header that looks like this:
 ```
