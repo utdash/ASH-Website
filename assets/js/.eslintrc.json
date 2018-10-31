@@ -1,0 +1,32 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "globals": {
+        "$": true
+    },
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "no-unused-vars": [
+            "warn"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "no-console": [
+            "off"
+        ],
+        "no-useless-escape": [
+            "off"
+        ]
+    }
+}

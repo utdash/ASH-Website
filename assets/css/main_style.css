@@ -13,8 +13,7 @@
  #content p { color: #676767; }
  #content abbr { border-bottom: 1px dotted #8f8f8f; }
  #page { margin: 0 auto; width: 950px; }
- #nav-wrap, #header-wrap, #main-wrap, #banner-wrap, #footer-wrap { min-width: 950px; }
- #header-wrap { background: #1d1d1d url(theme/header-bg.png?1539102259) repeat-x; border-bottom: 1px solid #272727; }
+ #nav-wrap, #banner-wrap, #footer-wrap { min-width: 950px; }
  #header { width: 100%; height: 102px; }
  #header, #header table { border-collapse: collapse; border-spacing: 0; }
  #header td { vertical-align: middle; text-align: left; }
@@ -78,7 +77,6 @@
  #banner-wrap { background: #0f0f0f; border-bottom: 1px solid #272727; overflow: hidden; }
  #banner { position: relative; padding: 17px 0 16px; overflow: hidden; }
  #banner-inner, #bannerleft { border: 8px solid #292929; }
- #main-wrap { background: url(theme/Main_Bg.jpg?1539102259); border-bottom: 1px solid #333333; }
  #main { }
  #content { min-height: 400px; padding: 23px 0; }
  .tall-header-page .wsite-header { width: 934px; height: 290px; background: url(theme/banner-tall.jpg?1539102259) no-repeat; }
