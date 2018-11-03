@@ -59,10 +59,15 @@
             //  Convert event JSON objects to divs for the page.
             let eventDivs = response.items.map(toEventDiv);
 
-            empty(eventsContainer);
+            //  Add divs to this fragment first to avoid unnecessary lag
+            let fragment = document.createDocumentFragment();
+
+            //  Each div gets passed as a separate argument
+            fragment.append(...eventDivs);
 
             //  Add all the events to the list on the page.
-            eventsContainer.append.apply(eventsContainer, eventDivs);
+            empty(eventsContainer);
+            eventsContainer.append(fragment);
         }
         catch (err) {
             empty(eventsContainer);
