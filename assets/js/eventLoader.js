@@ -109,70 +109,33 @@
             timeValue = `${timeStart} – ${timeEnd} on ${day}`;
         }
 
-        //  Create timeValueSpan
-        let timeValueSpan = document.createElement('span');
-
-        timeValueSpan.append(timeValue);
-        timeValueSpan.classList.add('eventDetailsRowValue');
-
-        //  Create timeDiv (contains timeValueSpan)
-        let timeDiv = document.createElement('div');
-
-        timeDiv.classList.add('eventDetailsRow');
-        timeDiv.append('When: ', timeValueSpan);
-
-        //  Create locationValueSpan
-        let locationValueSpan = document.createElement('span');
-
-        locationValueSpan.append(event.location);
-        locationValueSpan.classList.add('eventDetailsRowValue');
-
-        //  Create locationDiv (contains locationValueSpan)
-        let locationDiv = document.createElement('div');
-
-        locationDiv.classList.add('eventDetailsRow');
-        locationDiv.append('Location: ', locationValueSpan);
-
-        //  Create eventDetailsDiv (contains timeDiv and locationDiv)
-        let eventDetailsDiv = document.createElement('div');
-
-        eventDetailsDiv.classList.add('eventDetails');
-        eventDetailsDiv.append(timeDiv, locationDiv);
-
-        //  Create eventTitleDiv
-        let eventTitleDiv = document.createElement('div');
-
-        eventTitleDiv.classList.add('eventTitle');
-        eventTitleDiv.append(event.summary);
-
-        //  Create eventHeadDiv (contains eventTitleDiv and eventDetailsDiv)
-        let eventHeadDiv = document.createElement('div');
-
-        eventHeadDiv.classList.add('eventHead');
-        eventHeadDiv.append(eventTitleDiv, eventDetailsDiv);
-
         //  Create eventDiv (top level container)
         let eventDiv = document.createElement('div');
 
         eventDiv.classList.add('event');
-        eventDiv.append(eventHeadDiv);
+
+        let innerHTML =
+            '<div class="eventHead">' +
+                `<div class="eventTitle">${event.summary}</div>` +
+                '<div class="eventDetails">' +
+                    '<div class="eventDetailsRow">When: ' +
+                        `<span class="eventDetailsRowValue">${timeValue}</span>` +
+                    '</div>' +
+                    '<div class="eventDetailsRow">Location: ' +
+                        `<span class="eventDetailsRowValue">${event.location}</span>` +
+                    '</div>' +
+                '</div>' +
+            '</div>';
 
         //  Only add a body if the event has a description
         if (event.description) {
-            let eventDescription = document.createElement('p');
-
-            eventDescription.classList.add('eventDescription');
-            eventDescription.append(event.description);
-
-            //  Create eventBodyDiv (contains eventDescription)
-            let eventBodyDiv = document.createElement('div');
-
-            eventBodyDiv.classList.add('eventBody');
-            eventBodyDiv.append(eventDescription);
-
-            //  Add eventBodyDiv to the top level container
-            eventDiv.append(eventBodyDiv);
+            innerHTML +=
+                '<div class="eventBody">' +
+                    `<p class="eventDescription">${htmlEncode(event.description)}</p>` +
+                '</div>';
         }
+
+        eventDiv.innerHTML = innerHTML;
 
         //  Return the top level container
         return eventDiv;
@@ -224,5 +187,12 @@
                 r = '0' + r;
             return r;
         }
+    }
+
+    function htmlEncode(text) {
+        return text
+            .replace('&', '&amp;')
+            .replace('<', '&lt;')
+            .replace('>', '&gt;');
     }
 }());
