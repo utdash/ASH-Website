@@ -1,171 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    {% if page.title %}
-    <title>{{ page.title }} | {{ site.title }}</title>
-    {% else %}
-    <title>{{ site.title }}</title>
-    {% endif %}
+	<head>
+		
+		{% if page.title %}
+		<title>{{ page.title }} | {{ site.title }}</title>
+		{% else %}
+		<title>{{ site.title }}</title>
+		{% endif %}
+		
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<link rel="stylesheet" type="text/css" href="assets/css/editmysite.com.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/fancybox.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/main_style.css" title="wsite-theme-css" />
-	<link href='https://fonts.googleapis.com/css?family=Play:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="assets/css/editmysite.com.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fancybox.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/main_style.css" title="wsite-theme-css" />
+		<link href='https://fonts.googleapis.com/css?family=Play:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 
-	<style type='text/css'>
-		.wsite-header {
-			background-image: url(uploads/header_images/ASH_black_top.jpg) !important;
-			background-position: 0 0 !important;
-		}
+		<style type='text/css'>
+			.wsite-header {
+				background-image: url(uploads/header_images/headerHD.png) !important;
+				background-position: 0 0 !important;
+			}
 
-		.event {
-			display: block;
-			margin: 4pt auto;
-			width: 75%;
-			border: solid black 2px;
-			padding: 6pt;
-			text-align: left;
-			overflow: auto;
-		}
+			.event {
+				display: block;
+				margin: 4pt auto;
+				width: 75%;
+				border: solid black 2px;
+				padding: 6pt;
+				text-align: left;
+				overflow: auto;
+			}
 
-		.eventHead {
-			display: flex;
-			width: 100%;
-		}
-		.eventTitle {
-			margin: 0;
-			color: white;
-			font-size: 16pt;
-			padding-left: 4pt;
-			padding-right: 20pt;
-			display: inline-block;
-		}
-		.eventDetails {
-			display: inline-block;
-			margin-left: auto;
-		}
-		.eventDetailsRow {
-			display: block;
-			font-weight: bold;
-			color: white;
-		}
-		.eventDetailsRowValue {
-			font-weight: normal;
-			color: white;
-		}
+			.eventHead {
+				display: flex;
+				width: 100%;
+			}
+			.eventTitle {
+				margin: 0;
+				color: white;
+				font-size: 16pt;
+				padding-left: 4pt;
+				padding-right: 20pt;
+				display: inline-block;
+			}
+			.eventDetails {
+				display: inline-block;
+				margin-left: auto;
+			}
+			.eventDetailsRow {
+				display: block;
+				font-weight: bold;
+				color: white;
+			}
+			.eventDetailsRowValue {
+				font-weight: normal;
+				color: white;
+			}
 
-		.eventBody {
-			display: block;
-			padding-left: 20pt;
-		}
-		.eventDescription {
-			color: lightgray !important;
-		}
-	</style>
+			.eventBody {
+				display: block;
+				padding-left: 20pt;
+			}
+			.eventDescription {
+				color: lightgray !important;
+			}
+		</style>
 
-	{% if page.scripts %}
+		{% if page.scripts %}
 		{% for script in page.scripts %}
 			<script src="assets/js/{{ script }}"></script>
 		{% endfor %}
-	{% endif %}
-</head>
+		{% endif %}
 
-<body class="tall-header-page wsite-theme-dark  wsite-page-contact">
-	<div id="nav-wrap">
-		<div id="page">
-			<div id="topnav">
-				<ul class="wsite-menu-default">
-					<li {% if page.url == "/index.html" or page.url == "/" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="index.html" class="wsite-menu-item">
-							Home
-						</a>
-					</li>
-					<li {% if page.url == "/events.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="events.html" class="wsite-menu-item">
-							Meetings & Events
-						</a>
-					</li>
-					<li {% if page.url == "/past-events.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="past-events.html" class="wsite-menu-item">
-							Past Events
-						</a>
-					</li>
-					<li {% if page.url == "/about-us.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="about-us.html" class="wsite-menu-item">
-							About Us
-						</a>
-					</li>
-					<li {% if page.url == "/contact.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="contact.html" class="wsite-menu-item">
-							Contact
-						</a>
-					</li>
-					<li {% if page.url == "/officer-application.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="officer-application.html" class="wsite-menu-item">
-							Officer Application
-						</a>
-					</li>
-					<li {% if page.url == "/community-involvement.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
-						<a href="community-involvement.html" class="wsite-menu-item">
-							Community Involvement
-						</a>
-					</li>
-				</ul>
+	</head>
+
+	<body class="tall-header-page wsite-theme-dark  wsite-page-contact">
+		<div id="nav-wrap">
+			<div id="page">
+				<div id="topnav">
+					<a href="index.html" class="wsite-menu-item">
+								<img id="nav-icon" src="uploads/nav-icon.png" alt="ASH - Atheists Skeptics And Humanists"/>
+					</a>
+					<ul class="nav-links">
+						<li  {% if page.url == "/about-us.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
+							<a href="about-us.html" class="wsite-menu-item">
+								About Us
+							</a>
+						</li>
+						
+						<li {% if page.url == "/events.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
+							<a href="events.html" class="wsite-menu-item">
+								Meetings & Events
+							</a>
+						</li>
+						<li {% if page.url == "/photos.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
+							<a href="photos.html" class="wsite-menu-item">
+								Photos
+							</a>
+						</li>
+						<li {% if page.url == "/officer-application.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
+							<a href="officer-application.html" class="wsite-menu-item">
+								Officer Application
+							</a>
+						</li>
+						<li {% if page.url == "/community-involvement.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
+							<a href="community-involvement.html" class="wsite-menu-item">
+								Community Involvement
+							</a>
+						</li>
+						<li {% if page.url == "/contact.html" %} id="active" {% endif %} class="wsite-menu-item-wrap">
+							<a href="contact.html" class="wsite-menu-item">
+								Contact
+							</a>
+						</li>
+					</ul>
+					<div style="clear:both"></div>
+				</div>
+			</div>
+		</div>
+		
+			{{ content }}
+			
+			<div id="footer">
+			<div class="footer-icon">
+				<img src="uploads/UTD-ASH.jpg" alt="ASH" style="width:17vw; height:auto;margin-bottom: 2em;margin-right: 7vw;"/>
+			</div>
+				
+				<div class="affiliates-icons">
+						 <h2 class="wsite-content-title">Proud affiliates of:</h2>
+						 <div class="affiliate-images">
+							<a href='https://www.secularstudents.org/'>
+								<div class="img-target">
+									<img src="uploads/269331548.png" alt="Secular Students Alliance" style="width:15vw; height:auto" />
+								</div>
+							</a>
+					
+							<a href='https://www.centerforinquiry.net/'>
+								<div class="img-target">
+									<img class="cfi-icon" src="uploads/CFI-icon.png" alt="Center For Inquiry" style="width:15vw; height:auto;" />
+								</div>
+							</a>
+						</div>
+				</div>
 				<div style="clear:both"></div>
-			</div>
-		</div>
-	</div>
-	<div id="header-wrap">
-		<div id="page">
-			<table id="header">
-				<tr>
-					<td id="logo">
-						<span class="wsite-logo">
-							<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
-								<span style="display:none">Atheists, Skeptics & Humanists at UT Dallas</span>
-							</span>
-						</span>
-					</td>
-					<td id="header-right">
-						<table>
-							<tr>
-								<td class="phone-number"></td>
-								<td class="social"></td>
-								<td class="search"></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-	<div id="banner-wrap" class="wsite-background">
-		<div id="page">
-			<div id="banner">
-				<div id="banner-inner">
-					<div class="wsite-header"></div>
+				<div class="copyright" style="text-align:center;">
+					<h5>The ASH Website is published by Atheists, Skeptics, and Humanists at UT Dallas, a registered student
+					organization. The ASH Website is not an official publication of UT Dallas and does not represent the views of the
+					university or its officers. The University of Texas at Dallas is an Equal Opportunity/Affirmative Action University. </h5>
 				</div>
+				
+				<p style="text-align:center"><a href="https://github.com/utdash/ASH-Website">Domain maintained by <strong>Jacob Camacho and Joshua Baker</strong></a> | Website designed by Priscilla Arinze </p>
+				
 			</div>
-		</div>
-	</div>
-	<div id="main-wrap" style="display: block; overflow: hidden;">
-		<div id="page">
-			<div id="main">
-				<div id="content">
-                    {{ content }}
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="paragraph" style="float: none;text-align:center;">
-		The ASH Website is published by Atheists, Skeptics, and Humanists at UT Dallas, a registered student
-		organization. The ASH Website is not an official publication of UT Dallas and does not represent the views of the
-		university or its officers. The University of Texas at Dallas is an Equal Opportunity/Affirmative Action University.
-	</div>
-</body>
-
+	</body>
 </html>
