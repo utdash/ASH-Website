@@ -7,4 +7,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - serveLocal.sh
+  - serveLocal.bat
   - README.md
