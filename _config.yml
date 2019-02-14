@@ -9,3 +9,4 @@ exclude:
   - serveLocal.sh
   - serveLocal.bat
   - README.md
+  - assets/update_photos.sh
